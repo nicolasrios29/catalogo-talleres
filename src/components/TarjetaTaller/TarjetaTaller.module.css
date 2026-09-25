@@ -1,0 +1,98 @@
+.tarjeta {
+  background-color: var(--superficie);
+  color: var(--texto);
+  border: 2px solid transparent;
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.titulo {
+  color: var(--texto);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.categoria {
+  color: var(--primario);
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.cupos {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.barraFondo {
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.barraRelleno {
+  background-color: var(--primario);
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.botonDetalles {
+  background-color: var(--primario);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botonDetalles:hover {
+  opacity: 0.9;
+}
+
+.descripcion {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Clases condicionales según cupos */
+.disponible {
+  border-color: var(--exito);
+}
+
+.pocos {
+  border-color: var(--alerta);
+}
+
+.completo {
+  opacity: 0.7;
+  border-color: var(--peligro);
+}
+
+/* Etiqueta "Nuevo" */
+.etiquetaNuevo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--exito);
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+/* Clase cuando la tarjeta está expandida */
+.expandida {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  border-width: 3px;
+}
