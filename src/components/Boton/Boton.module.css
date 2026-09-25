@@ -1,0 +1,34 @@
+.boton {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.primario {
+  background-color: var(--primario);
+  color: white;
+}
+
+.primario:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.secundario {
+  background-color: transparent;
+  color: var(--texto);
+  border: 2px solid var(--primario);
+}
+
+.secundario:hover {
+  background-color: var(--primario);
+  color: white;
+}
+
+.activo {
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.4);
+}

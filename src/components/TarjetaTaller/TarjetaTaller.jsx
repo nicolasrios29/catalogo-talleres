@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import estilos from './TarjetaTaller.module.css'
+import Boton from '../Boton/Boton'
 
-export default function TarjetaTaller({ taller }) {
+export default function TarjetaTaller({ taller, vista }) {
   const { titulo, categoria, cupo, inscriptos, nuevo, descripcion } = taller
 
   const libres = cupo - inscriptos
@@ -15,8 +16,10 @@ export default function TarjetaTaller({ taller }) {
     claseCupo = estilos.pocos
   }
 
+  const claseVista = vista === 'lista' ? estilos.lista : ''
+
   return (
-    <article className={`${estilos.tarjeta} ${claseCupo} ${expandida ? estilos.expandida : ''}`}>
+    <article className={`${estilos.tarjeta} ${claseCupo} ${expandida ? estilos.expandida : ''} ${claseVista}`}>
       {nuevo && <span className={estilos.etiquetaNuevo}>Nuevo</span>}
 
       <h2 className={estilos.titulo}>{titulo}</h2>
@@ -33,12 +36,9 @@ export default function TarjetaTaller({ taller }) {
         />
       </div>
 
-      <button
-        className={estilos.botonDetalles}
-        onClick={() => setExpandida(!expandida)}
-      >
+      <Boton onClick={() => setExpandida(!expandida)}>
         {expandida ? 'Ocultar detalles' : 'Ver detalles'}
-      </button>
+      </Boton>
 
       {expandida && (
         <p className={estilos.descripcion}>{descripcion}</p>
